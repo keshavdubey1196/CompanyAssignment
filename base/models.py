@@ -1,4 +1,5 @@
 from django.db import models
+from accounts.models import CustomUserModel
 
 # Create your models here.
 
@@ -26,7 +27,7 @@ class Hackathon(models.Model):
 
 
 class Submission(models.Model):
-    # submitted_by=
+    submitted_by = models.ForeignKey(CustomUserModel, on_delete=models.CASCADE)
     hackthon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     summary = models.TextField(max_length=500, null=True, blank=True)
