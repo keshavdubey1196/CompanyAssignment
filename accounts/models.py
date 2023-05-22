@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from base.models import Hackathon
+from manager import UserManager
 
 # Create your models here.
 
